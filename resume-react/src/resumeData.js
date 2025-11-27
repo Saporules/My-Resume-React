@@ -1,6 +1,6 @@
 // Hardcoded resume data
 const resumeData = {
-  name: "ASAF LOPEZ",
+  name: "Asaf Lopez",
   fullname: "Asaf Eduardo Lopez Govea",
   title: "Senior Front-End Developer",
   contact: {
@@ -9,6 +9,7 @@ const resumeData = {
     phone: "+52 55 7346 9088",
     linkedin: "https://www.linkedin.com/in/asaf-lopez-govea"
   },
+  hook: "A decade+ of experience creating high-impact web solutions.",
   summary: "Front-End Developer with 13+ years of experience building scalable web applications, with a strong focus on JavaScript as the core of my development approach. Confident working across modern libraries and frameworks as Angular, and React. Skilled in Agile environments, UI/UX design, and AI-enhanced workflows. Known for clean code, a collaborative mindset, and delivering high-impact digital solutions.",
   technicalSkills: {
     languages: ["JavaScript (ES6+)", "HTML5", "CSS3", "SCSS"],

@@ -1,0 +1,174 @@
+.resume-cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  text-align: left;
+  background: #000000;
+  background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgb(7, 12, 27) 50%, rgba(0, 0, 0, 1) 100%);
+  color: white;
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+
+  .cover-content {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    flex-direction: column;
+
+    .cover-name {
+      font-size: 5rem;
+      margin-bottom: 0;
+      font-weight: 700;
+      letter-spacing: 5px;
+
+      &.shadow-dance-text {
+        color: #fff;
+        text-shadow: 0 0 0 #ff005e, 0 0 0 #00d4ff;
+      }
+      
+    }
+
+    .cover-fullname {
+      margin: 0;
+      font-size: 1rem;
+      color: #bbbbbb;
+    }
+
+    .cover-position {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+      color: #61dafb;
+      text-align: left;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: flex-start;
+      margin-bottom: 5em;
+
+      a {
+        color: #ff005e;
+
+        &:hover {
+          color: #ff78a9;
+        }
+      }
+
+      p {
+        margin: 0;
+      }
+
+      /* Add a 1px white separator on the right of each contact item except the last */
+      p:not(:last-child), a:not(:last-child) {
+        padding-right: 1rem;
+        margin-right: 1rem;
+        border-right: 1px solid rgba(255, 255, 255, 0.9);
+      }
+    }
+
+    .hook-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .hook-text {
+        font-family: 'MD Mono', monospace;
+        font-size: 3rem;
+        margin-top: 1rem;
+        font-weight: 300;
+        color: #ffffff;
+      }
+
+      .hook-element {
+        width: 50%;
+      }
+
+      .hook-img {
+        width: 100%;
+        border-radius: 27px;
+      }
+    }
+    
+  }
+}
+
+@keyframes shadow-in {
+  0% {
+    text-shadow: 0 0 0 #ff005e, 0 0 0 #00d4ff;
+  }
+  100% {
+    text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+  }
+}
+
+@keyframes shadow-out {
+  0% {
+    text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff;
+  }
+  100% {
+    text-shadow: 0 0 0 #ff005e, 0 0 0 #00d4ff;
+  }
+}
+
+.shadow-dance-text.shadowed {
+  animation: shadow-in 0.6s forwards;
+}
+
+.shadow-dance-text.returning {
+  animation: shadow-out 0.6s forwards;
+}
+
+.hook-img-border {
+  width: 45vmin;
+  height: 45vmin;
+  display: grid;
+  place-content: center;
+  color: white;
+  text-shadow: 0 1px 0 #000;
+  
+  --border-angle: 0turn; // For animation.
+  --main-bg: conic-gradient(
+      from var(--border-angle),
+      #213,
+      #112 5%,
+      #112 60%,
+      #213 95%
+    );
+  
+  border: solid 5px transparent;
+  border-radius: 2em;
+  --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #00d4ff, #ff005e 99%, transparent);
+  
+  background: 
+    // padding-box clip this background in to the overall element except the border.
+    var(--main-bg) padding-box,
+    // border-box extends this background to the border space
+    var(--gradient-border) border-box, 
+    // Duplicate main background to fill in behind the gradient border. You can remove this if you want the border to extend "outside" the box background.
+    var(--main-bg) border-box;
+  
+  background-position: center center;
+
+  animation: bg-spin 3s linear infinite;
+  @keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
