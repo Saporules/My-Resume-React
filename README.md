@@ -37,7 +37,7 @@ This project is a **digital resume** for Asaf Eduardo Lopez Govea, a Senior Fron
 ## Project Structure
 
 - `src/App.js` – Main React component rendering the resume
-- `src/index.css` – Tailwind CSS and global styles
+- `src/index.scss` – Tailwind CSS and global styles
 - `public/` – Static assets and HTML template
 
 ## Customization
