@@ -39,6 +39,10 @@ const resumeData = {
     {
       title: "Mediation",
       text: "Effective at facilitating dialogue and resolving conflicts between stakeholders, designers, and developers."
+    },
+    {
+      title: "English Proficiency",
+      text: "Fluent in professional English with proven ability to communicate effectively across multicultural teams, ensuring clarity in complex d iscussions and documentation."
     }
   ],
   experience: [
@@ -51,6 +55,11 @@ const resumeData = {
           title: "Front-End Developer",
           dates: "Jan 2024-Jul 2025",
           client: "Confidential (Global Biotech & Pharmaceutical Company)",
+          techStack: {
+            frontend: ["Angular (upgraded from v17 to v19)"],
+            tools: ["Gemini AI"],
+            purpose: "AI Extraction Pipeline — surface useful information extracted by AI tools processing PDFs"
+          },
           details: [
             "Migrated enterprise apps from Angular 17 to 19, resolving complex dependencies.",
             "Integrated AI tools to streamline development and reduce debugging time.",
@@ -61,6 +70,10 @@ const resumeData = {
           title: "Front-End Developer",
           dates: "Apr 2023-Jan 2024",
           client: "Confidential (National Banking Group)",
+          techStack: {
+            frontend: ["Angular"],
+            purpose: "Security library wrapper integration"
+          },
           details: [
             "Developed a secure Angular wrapper library for enterprise-wide use.",
             "Delivered documentation and supported cross-team implementation."
@@ -70,6 +83,11 @@ const resumeData = {
           title: "Front-End Developer",
           dates: "May 2021 - Mar 2023",
           client: "Confidential (Digital Wealth Management Platform)",
+          techStack: {
+            frontend: ["React (primary for new components)"],
+            legacy: ["Backbone.js", "jQuery"],
+            purpose: "Maintain and enhance financial platform; introduce React components"
+          },
           details: [
             "Maintained core features during integration of two financial platforms.",
             "Modernized legacy systems with React components in Backbone.js/jQuery.",
@@ -80,6 +98,10 @@ const resumeData = {
           title: "Front-End Developer",
           dates: "Oct 2019 - May 2021",
           client: "Confidential (Global Banking Institution)",
+          techStack: {
+            frontend: ["Svelte"],
+            purpose: "Develop new components for regional adaptation of wealth management platform"
+          },
           details: [
             "Built region-specific components for a wealth management platform using Svelte.",
             "Localized features for the Mexican market in collaboration with global teams."
@@ -89,6 +111,10 @@ const resumeData = {
           title: "Front-End Developer",
           dates: "Mar 2019 - Oct 2019",
           client: "Confidential (Wealth Management Firm)",
+          techStack: {
+            frontend: ["Angular 5+"],
+            purpose: "CRM module development for wealth management"
+          },
           details: [
             "Created a CRM module for financial services, enhancing broker workflows.",
             "Delivered scalable Angular components and post-launch optimizations."
@@ -98,6 +124,10 @@ const resumeData = {
           title: "Front-End Developer",
           dates: "Aug 2017 - Mar 2019",
           client: "Confidential (Global Investment Bank)",
+          techStack: {
+            frontend: ["Angular 2+, Ionic"],
+            purpose: "Hybrid app support and mortgage module development"
+          },
           details: [
             "Developed a mortgage module with interactive forms and visualizations.",
             "Resolved bugs in hybrid mobile apps (iOS/Android), improving reliability."

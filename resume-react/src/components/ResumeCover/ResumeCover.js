@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import './ResumeCover.scss';
 import TechStack from '../TechStack/TechStack';
 import SoftStack from '../SoftStack/SoftStack';
+import Experience from '../Experience/Experience';
 
 const ResumeCover = ({ data }) => {
   const titleRef = useRef(null);
@@ -69,6 +70,7 @@ const ResumeCover = ({ data }) => {
         </div>
         <TechStack data={data} />
         <SoftStack data={data} />
+        <Experience data={data} />
       </div>
     </div>
   );
