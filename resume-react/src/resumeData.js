@@ -20,11 +20,26 @@ const resumeData = {
     methodologies: ["Agile", "Scrum"]
   },
   softSkills: [
-    "Communication: Clear, concise, and bilingual (English/Spanish); skilled in translating technical concepts for diverse audiences.",
-    "Leadership: Experience guiding cross-functional teams and mentoring junior developers in Agile environments.",
-    "Proactivity: Self-driven and solution-oriented; anticipates challenges and takes initiative to resolve them.",
-    "Flexibility: Adapts quickly to changing priorities, technologies, and team dynamics.",
-    "Mediation: Effective at facilitating dialogue and resolving conflicts between stakeholders, designers, and developers."
+    {
+      title: "Communication",
+      text: "Clear, concise, and bilingual (English/Spanish); skilled in translating technical concepts for diverse audiences."
+    },
+    {
+      title: "Leadership",
+      text: "Experience guiding cross-functional teams and mentoring junior developers in Agile environments."
+    },
+    {
+      title: "Proactivity",
+      text: "Self-driven and solution-oriented; anticipates challenges and takes initiative to resolve them."
+    },
+    {
+      title: "Flexibility",
+      text: "Adapts quickly to changing priorities, technologies, and team dynamics."
+    },
+    {
+      title: "Mediation",
+      text: "Effective at facilitating dialogue and resolving conflicts between stakeholders, designers, and developers."
+    }
   ],
   experience: [
     {

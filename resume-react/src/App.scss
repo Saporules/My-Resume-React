@@ -1,7 +1,11 @@
-h1 {
+* {
+    box-sizing: border-box;
+}
+
+h1, h2 {
     font-family: 'Russo One', sans-serif;
 }
 
-p, a {
+h3, p, a, li {
     font-family: 'MD Mono', monospace;
 }

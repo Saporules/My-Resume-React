@@ -38,10 +38,10 @@
     }
 
     .cover-position {
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
+      font-size: 2rem;
+      margin: .5rem 0;
       font-weight: 400;
-      color: #61dafb;
+      color: #00d4ff;
       text-align: left;
     }
 
@@ -145,12 +145,9 @@
   border-radius: 2em;
   --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #00d4ff, #ff005e 99%, transparent);
   
-  background: 
-    // padding-box clip this background in to the overall element except the border.
+  background:
     var(--main-bg) padding-box,
-    // border-box extends this background to the border space
     var(--gradient-border) border-box, 
-    // Duplicate main background to fill in behind the gradient border. You can remove this if you want the border to extend "outside" the box background.
     var(--main-bg) border-box;
   
   background-position: center center;
@@ -160,10 +157,6 @@
     to {
       --border-angle: 1turn;
     }
-  }
-
-  &:hover {
-    animation-play-state: paused;
   }
 }
 

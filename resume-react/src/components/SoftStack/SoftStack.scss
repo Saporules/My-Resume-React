@@ -1,0 +1,42 @@
+.soft-stack {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 4rem;
+  color: white;
+
+  h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #00d4ff;
+    padding: 2.5rem;
+  }
+
+  .soft-skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .soft-skill-card {
+    .soft-skill-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #ff005e;
+      margin: 0 0 0.75rem 0;
+    }
+
+    .soft-skill-text {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #bbbbbb;
+      margin: 0;
+
+      &:hover {
+        color: #00d4ff;
+        transition: color 0.3s ease;
+      }
+    }
+  }
+}

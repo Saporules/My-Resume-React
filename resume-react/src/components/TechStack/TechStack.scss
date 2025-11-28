@@ -1,0 +1,104 @@
+.tech-stack {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    padding: 3rem;
+    border-radius: 2rem;
+    background: #0a0000;
+    background: linear-gradient(90deg,rgba(10, 0, 0, 1) 0%, rgba(4, 27, 51, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    color: white;
+    position: relative;
+
+    &:before {
+        content: "";
+        background-color: transparent;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+        background-repeat: repeat;
+        background-size: 182px;
+        opacity: 0.06;
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 2rem;
+    }
+
+  h2 {
+    font-size: 3rem;
+    margin-top: 0;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #00d4ff;
+  }
+
+  .featured-tech {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .tech-logo {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .tech-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #ff005e;
+      margin: 0;
+    }
+  }
+
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .skill-category {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #ff005e;
+      text-transform: capitalize;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 0.5rem 0;
+        color: #bbbbbb;
+        font-size: 0.95rem;
+
+        &:hover {
+          color: #00d4ff;
+          transition: color 0.3s ease;
+        }
+      }
+    }
+  }
+}
