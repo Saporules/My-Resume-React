@@ -26,7 +26,7 @@
 
       &.shadow-dance-text {
         color: #fff;
-        text-shadow: 0 0 0 #ff005e, 0 0 0 #00d4ff;
+        text-shadow: 0 0 0 #ff005e, 0 0 0 #009dbd;
       }
       
     }
@@ -76,22 +76,83 @@
       display: flex;
       flex-direction: row;
       align-items: center;
+      justify-content: center;
+      gap: 3rem;
 
       .hook-text {
         font-family: 'MD Mono', monospace;
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin-top: 1rem;
         font-weight: 300;
         color: #ffffff;
       }
 
       .hook-element {
-        width: 50%;
+        width: 36%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .hook-img {
         width: 100%;
         border-radius: 27px;
+      }
+    }
+    
+    .cover-paragraph-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 900px;
+      margin: 5rem auto;
+      background: rgba(0,212,255,0); /* use rgba so opacity changes smoothly */
+      transition: background-color 1s cubic-bezier(0.2,0.8,0.2,1);
+      position: relative;
+      will-change: background-color;
+
+      &:hover {
+        background: rgba(0,0,0,0.95);
+      }
+
+      .cover-paragraph {
+        margin:0;
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: rgba(255,255,255,0.95);
+        padding: 1rem;
+        background: transparent;
+        transition: background-color 1s cubic-bezier(0.2,0.8,0.2,1), color 1s cubic-bezier(0.2,0.8,0.2,1), transform 1s cubic-bezier(0.2,0.8,0.2,1);
+        will-change: transform, color, background-color;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+
+        &:before {
+          content: "";
+          background-color: transparent;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+          background-repeat: repeat;
+          background-size: 182px;
+          opacity: 0.06;
+          top: 0;
+          left: 0;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: inherit;
+          pointer-events: none;
+        }
+      }
+
+      &:hover .cover-paragraph {
+        transform: translate(12px, 12px);
+      }
+
+      @media (max-width: 600px) {
+        .cover-paragraph { font-size: 0.95rem; padding: 0.75rem; }
       }
     }
     

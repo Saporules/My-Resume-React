@@ -9,7 +9,7 @@ const resumeData = {
     phone: "+52 55 7346 9088",
     linkedin: "https://www.linkedin.com/in/asaf-lopez-govea"
   },
-  hook: "A decade+ of experience creating high-impact web solutions.",
+  hook: "A decade+ of experience crafting high-impact web solutions.",
   summary: "Front-End Developer with 13+ years of experience building scalable web applications, with a strong focus on JavaScript as the core of my development approach. Confident working across modern libraries and frameworks as Angular, and React. Skilled in Agile environments, UI/UX design, and AI-enhanced workflows. Known for clean code, a collaborative mindset, and delivering high-impact digital solutions.",
   technicalSkills: {
     languages: ["JavaScript (ES6+)", "HTML5", "CSS3", "SCSS"],
@@ -137,9 +137,24 @@ const resumeData = {
     }
   ],
   earlyCareer: [
-    { title: "Web & Mobile Developer / Project Manager", company: "OMAKASE Tech & Design", duration: "2015-2017" },
-    { title: "Webmaster", company: "MG Radio", duration: "2014-2015" },
-    { title: "Web & Mobile Developer", company: "Niumedia", duration: "2012-2014" }
+    {
+      title: "Web & Mobile Developer / Project Manager",
+      company: "OMAKASE Tech & Design",
+      duration: "2015-2017",
+      description: "Developed hybrid mobile apps (Yego, Tractostation, Comeralia) using Ionic and Angular for iOS/Android. Built custom WordPress websites from scratch. Managed government platform requirements as Project Manager for RUTY, bridging UX/UI design with backend development."
+    },
+    {
+      title: "Webmaster",
+      company: "MG Radio",
+      duration: "2014-2015",
+      description: "Developed custom WordPress websites from design specifications without using templates. Managed hosting services and performance optimization. Developed Facebook apps for social media campaigns and marketing initiatives."
+    },
+    {
+      title: "Web & Mobile Developer",
+      company: "Niumedia",
+      duration: "2012-2014",
+      description: "Developed hybrid mobile apps including Bride2be wedding planning app and Gasored gas station locator using Appgyver/Steroids, jQuery Mobile, and PhoneGap. First Angular.js project, progressing from UI/UX implementation to full feature development."
+    }
   ],
   education: {
     institution: "Universidad Politécnica de San Luis Potosí",

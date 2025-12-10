@@ -111,4 +111,107 @@
       color: rgba(87,92,101,0.85);
     }
   }
+
+  /* Early Career Card */
+  .early-career-section {
+    margin-top: 2rem;
+  }
+
+  .early-career-card {
+    background: linear-gradient(90deg, #ff005e 0%, #ff77a9 50%, #ff005e 100%);
+    color: white;
+
+    &:before{
+        opacity:0.2;
+    }
+
+    h3 {
+        font-family: 'Russo One', sans-serif;
+        font-size: 2rem;
+    }
+  }
+
+  .early-career-list {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .early-career-item {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-family: 'Md Mono', monospace;
+  }
+
+  .early-career-role {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .early-career-company {
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 0.35rem;
+    opacity: 0.95;
+  }
+
+  .early-career-duration {
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .early-career-description {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    opacity: 0.9;
+    margin-top: 0.5rem;
+  }
+  /* Education Card */
+  .education-section {
+    margin-top: 2rem;
+  }
+
+  .education-card {
+    background: radial-gradient(circle, #00d4ff 0%, #009dbd 100%);
+    color: white;
+
+    &:before{
+        opacity:0.18;
+    }
+
+    h3 {
+      font-family: 'Russo One', sans-serif;
+      font-size: 2rem;
+    }
+  }
+
+  .education-item {
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.06);
+    border-radius: 8px;
+    color: white;
+    font-family: 'Md Mono', monospace;
+  }
+
+  .education-institution {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .education-degree {
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+    opacity: 0.95;
+  }
+
+  .education-graduation {
+    font-size: 0.85rem;
+    opacity: 0.85;
+  }
 }
