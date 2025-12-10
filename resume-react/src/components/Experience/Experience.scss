@@ -1,3 +1,5 @@
+@import '../../breakpoints';
+
 .experience-section {
   margin-top: 4rem;
 
@@ -7,6 +9,14 @@
     color: #00d4ff;
     line-height: 1;
     padding: 2.5rem;
+
+    @include respond-to-max(sm) {
+      padding: 1.5rem;
+    }
+
+    @include respond-to-max(md) {
+      font-size: 3rem;
+    }
   }
 
   .companies {
@@ -23,6 +33,12 @@
       align-items: baseline;
       margin-bottom: 1rem;
       font-family: 'Md Mono', monospace;
+
+      @include respond-to-max(md) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
 
       .company-name {
         font-size: 2.5rem;
@@ -42,6 +58,12 @@
       }
     .role {
       padding: 2rem;
+
+      @include respond-to-max(sm) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
       &:not(:last-child) {
         border-bottom: 3px solid white;
       }

@@ -70,7 +70,7 @@ const ResumeCover = ({ data }) => {
         </div>
         
         <div className="cover-paragraph-wrapper">
-          <p className="cover-paragraph">Seasoned <b>Front-End Developer</b> with 13+ years of experience transforming complex ideas into intuitive, high‑performance web applications. Expert in <b>JavaScript, Angular, and React</b>, with a proven record of modernizing enterprise systems and integrating <b>AI‑driven solutions</b> to accelerate development. Skilled at bridging design and engineering, delivering seamless <b>UI/UX experiences</b>, and thriving in Agile teams. Recognized for mentoring developers, guiding <b>cross‑functional collaboration</b>, and consistently delivering scalable solutions that empower businesses and delight users</p>
+          <p className="cover-paragraph">Seasoned <b>Front-End Developer</b> with 13+ years of experience transforming complex ideas into intuitive, high‑performance web applications. Expert in <b>JavaScript, Angular, and React</b>, with a proven record of modernizing enterprise systems and integrating <b>AI‑driven solutions</b> to accelerate development. Skilled at bridging design and engineering, delivering seamless <b>UI/UX experiences</b>, and thriving in Agile teams. Recognized for mentoring developers, guiding <b>cross‑functional collaboration</b>, and consistently delivering scalable solutions that empower businesses and delight users.</p>
         </div>
 
         <TechStack data={data} />

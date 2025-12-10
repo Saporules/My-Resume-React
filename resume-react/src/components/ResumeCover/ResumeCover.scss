@@ -1,3 +1,5 @@
+@import '../../breakpoints';
+
 .resume-cover {
   display: flex;
   flex-direction: column;
@@ -24,6 +26,14 @@
       font-weight: 700;
       letter-spacing: 5px;
 
+      @include respond-to(sm) {
+        font-size: 3.2rem;
+      }
+
+      @include respond-to(lg) {
+        font-size: 5rem;
+      }
+
       &.shadow-dance-text {
         color: #fff;
         text-shadow: 0 0 0 #ff005e, 0 0 0 #009dbd;
@@ -43,6 +53,10 @@
       font-weight: 400;
       color: #00d4ff;
       text-align: left;
+
+      @include respond-to(sm) {
+        font-size: 1.5rem;
+      }
     }
 
     .contact-info {
@@ -51,6 +65,10 @@
       width: 100%;
       justify-content: flex-start;
       margin-bottom: 5em;
+
+      @include respond-to-max(md) {
+        flex-direction: column;
+      }
 
       a {
         color: #ff005e;
@@ -69,6 +87,12 @@
         padding-right: 1rem;
         margin-right: 1rem;
         border-right: 1px solid rgba(255, 255, 255, 0.9);
+
+        @include respond-to-max(md) {
+          padding-right: 0;
+          margin-right: 0;
+          border-right: none;
+        }
       }
     }
 
@@ -79,6 +103,11 @@
       justify-content: center;
       gap: 3rem;
 
+      @include respond-to-max(md) {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
       .hook-text {
         font-family: 'MD Mono', monospace;
         font-size: 2.5rem;
@@ -88,10 +117,23 @@
       }
 
       .hook-element {
-        width: 36%;
+        width: 30%;
         display: flex;
         align-items: center;
         justify-content: center;
+        text-align: center;
+
+        @include respond-to-max(md) {
+          width: 100%;
+          max-width: 360px;
+        }
+      }
+      p.hook-element {
+        width: 35%;
+
+        @include respond-to-max(md) {
+          width: 100%;
+        }
       }
 
       .hook-img {
@@ -119,7 +161,7 @@
         margin:0;
         position: relative;
         z-index: 2;
-        text-align: center;
+        text-align: left;
         font-size: 1.05rem;
         line-height: 1.6;
         color: rgba(255,255,255,0.95);
@@ -186,8 +228,6 @@
 }
 
 .hook-img-border {
-  width: 45vmin;
-  height: 45vmin;
   display: grid;
   place-content: center;
   color: white;

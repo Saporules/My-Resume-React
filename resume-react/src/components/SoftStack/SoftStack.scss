@@ -1,3 +1,5 @@
+@import '../../breakpoints';
+
 .soft-stack {
   display: flex;
   flex-direction: column;
@@ -11,6 +13,10 @@
     margin-bottom: 2rem;
     color: #00d4ff;
     padding: 2.5rem;
+
+    @include respond-to-max(sm) {
+      padding: 1.5rem;
+    }
   }
 
   .soft-skills-container {

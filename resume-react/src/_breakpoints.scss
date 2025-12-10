@@ -1,0 +1,72 @@
+// ============================================================================
+// Breakpoints & Responsive Mixin
+// ============================================================================
+// Mobile-first approach: base styles are mobile, then use mixins to add
+// rules at specific breakpoints.
+
+// Breakpoint Values
+$bp-sm: 480px;   // Small phones / landscape
+$bp-md: 768px;   // Tablets portrait
+$bp-lg: 992px;   // Tablets landscape / small laptops
+$bp-xl: 1200px;  // Desktops
+$bp-xxl: 1440px; // Wide desktops
+
+// ============================================================================
+// Responsive Mixin (min-width)
+// ============================================================================
+// Usage: @include respond-to(md) { /* styles */ }
+
+@mixin respond-to($bp) {
+  @if $bp == sm {
+    @media (min-width: $bp-sm) {
+      @content;
+    }
+  } @else if $bp == md {
+    @media (min-width: $bp-md) {
+      @content;
+    }
+  } @else if $bp == lg {
+    @media (min-width: $bp-lg) {
+      @content;
+    }
+  } @else if $bp == xl {
+    @media (min-width: $bp-xl) {
+      @content;
+    }
+  } @else if $bp == xxl {
+    @media (min-width: $bp-xxl) {
+      @content;
+    }
+  }
+}
+
+// ============================================================================
+// Responsive Mixin (max-width)
+// ============================================================================
+// Usage: @include respond-to-max(md) { /* styles */ }
+// Applies styles UP TO (and including) the specified breakpoint
+
+@mixin respond-to-max($bp) {
+  @if $bp == sm {
+    @media (max-width: #{ $bp-sm - 1px }) {
+      @content;
+    }
+  } @else if $bp == md {
+    @media (max-width: #{$bp-md - 1px}) {
+      @content;
+    }
+  } @else if $bp == lg {
+    @media (max-width: #{$bp-lg - 1px}) {
+      @content;
+    }
+  } @else if $bp == xl {
+    @media (max-width: #{$bp-xl - 1px}) {
+      @content;
+    }
+  } @else if $bp == xxl {
+    @media (max-width: #{$bp-xxl - 1px}) {
+      @content;
+    }
+  }
+}
+
