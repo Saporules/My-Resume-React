@@ -1,0 +1,124 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/breakpoints' as *;
+
+.contact {
+  background: $ink;
+  color: $paper;
+
+  &__inner {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 56px $gutter 64px;
+    display: grid;
+    gap: 40px;
+
+    @include respond-to(lg) {
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      padding: 96px $gutter-lg;
+    }
+  }
+
+  h2 {
+    font-size: clamp(2.5rem, 7vw, 4.25rem);
+    font-weight: 800;
+    font-variation-settings: 'wdth' 62;
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+  }
+
+  &__direct {
+    margin-top: 32px;
+    display: grid;
+    gap: 6px;
+    justify-items: start;
+
+    p {
+      color: #b5b5b5;
+      font-size: $fs-sm;
+    }
+
+    a {
+      font-weight: 700;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+
+      &:hover {
+        text-decoration-color: $signal;
+        text-decoration-thickness: 2px;
+      }
+    }
+  }
+
+  &__form {
+    display: grid;
+    gap: 22px;
+    align-content: start;
+  }
+
+  &__field {
+    display: grid;
+    gap: 6px;
+
+    label {
+      font-size: $fs-sm;
+      font-weight: 700;
+    }
+
+    input,
+    textarea {
+      font: inherit;
+      color: $paper;
+      background: transparent;
+      border: 0;
+      border-bottom: 2px solid #6b6b6b;
+      padding: 8px 0;
+      border-radius: 0;
+      resize: vertical;
+
+      &:focus {
+        outline: none;
+        border-bottom-color: $paper;
+      }
+
+      &:focus-visible {
+        outline: 3px solid $signal;
+        outline-offset: 2px;
+      }
+    }
+
+    &.has-error input,
+    &.has-error textarea {
+      border-bottom-color: #ff8a8a;
+    }
+  }
+
+  &__error {
+    color: #ff8a8a;
+    font-size: $fs-sm;
+  }
+
+  &__send {
+    justify-self: start;
+    font-size: $fs-base;
+
+    &:hover {
+      background: $paper;
+      border-color: $paper;
+      color: $ink;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: progress;
+    }
+  }
+
+  &__status {
+    min-height: 1.5em;
+
+    a {
+      font-weight: 700;
+    }
+  }
+}
