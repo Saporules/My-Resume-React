@@ -95,6 +95,22 @@ a {
   }
 }
 
+.lead {
+  font-size: $fs-md;
+  line-height: 1.45;
+}
+
+.bullets {
+  margin-top: 14px;
+  padding-left: 1.1em;
+  display: grid;
+  gap: 8px;
+
+  li::marker {
+    color: $signal;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

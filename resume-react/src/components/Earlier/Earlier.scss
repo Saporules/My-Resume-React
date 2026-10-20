@@ -1,0 +1,52 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/breakpoints' as *;
+
+.earlier {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 22px;
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+
+    h3 {
+      font-size: $fs-md;
+      font-weight: 800;
+      font-variation-settings: 'wdth' 75;
+    }
+
+    span {
+      font-size: $fs-sm;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: $fs-sm;
+    margin-bottom: 4px;
+  }
+
+  &__facts {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: $rule-heavy;
+    display: grid;
+    gap: 20px;
+
+    @include respond-to(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    h3 {
+      font-size: $fs-base;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+  }
+}

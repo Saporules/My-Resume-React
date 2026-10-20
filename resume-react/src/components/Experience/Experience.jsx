@@ -1,95 +1,40 @@
-import React from 'react';
 import './Experience.scss';
-import Card from '../UI/Card/Card';
+import Section from '../Section/Section';
+import { useContent } from '../../i18n/LanguageContext';
 
-const Experience = ({ data }) => {
-  if (!data || !data.experience) return null;
+const Bullets = ({ items }) =>
+  items.length > 0 && (
+    <ul className="bullets">
+      {items.map((b) => <li key={b}>{b}</li>)}
+    </ul>
+  );
 
-  const companies = data.experience;
+const Experience = () => {
+  const { experience } = useContent();
 
   return (
-    <div className="experience-section">
-      <h2>Experience</h2>
-      <div className="companies">
-        {companies.map((company, idx) => {
-          const slug = company.company ? company.company.toLowerCase().replace(/\s+/g, '-') : `company-${idx}`;
-          return (
-            <Card key={idx} className={`experience-card ${slug}`}>
-              <div className="company-header">
-                <h3 className="company-name">{company.company}</h3>
-                <div className="company-meta">{company.location} • {company.duration}</div>
-              </div>
-                <h4 className='role-title'>Front-End Developer</h4>
-              <div className="roles">
-                {company.roles && company.roles.map((role, rIdx) => (
-                  <div key={rIdx} className="role">
-                    <p className="role-dates">{role.dates}</p>
-                    {role.client && <span className="role-client">{role.client}</span>}
-
-                    {/* Render tech stack inline for this role (preferred order) */}
-                    {role.techStack && (
-                      <div className="role-techline">
-                        {role.techStack.frontend && (
-                          <span className="tech-item"><strong>Frontend:</strong> {role.techStack.frontend.join(', ')}</span>
-                        )}
-                        {role.techStack.legacy && (
-                          <span className="tech-item"><strong>Legacy:</strong> {role.techStack.legacy.join(', ')}</span>
-                        )}
-                        {role.techStack.tools && (
-                          <span className="tech-item"><strong>Tools:</strong> {role.techStack.tools.join(', ')}</span>
-                        )}
-                        {role.techStack.purpose && (
-                          <span className="tech-item"><strong>Purpose:</strong> {Array.isArray(role.techStack.purpose) ? role.techStack.purpose.join(' / ') : role.techStack.purpose}</span>
-                        )}
-                      </div>
-                    )}
-
-                    <p className="role-summary">Details:</p>
-                    <ul className="role-details">
-                      {role.details && role.details.map((d, i) => <li key={i}>{d}</li>)}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </Card>
-          );
-        })}
-      </div>
-
-      {/* Early Career Section */}
-      {data.earlyCareer && data.earlyCareer.length > 0 && (
-        <div className="early-career-section">
-          <Card className="early-career-card">
-            <h3>Early Career</h3>
-            <div className="early-career-list">
-              {data.earlyCareer.map((job, idx) => (
-                <div key={idx} className="early-career-item">
-                  <div className="early-career-role">{job.title}</div>
-                  <div className="early-career-company">{job.company}</div>
-                  <div className="early-career-duration">{job.duration}</div>
-                  {job.description && <div className="early-career-description">{job.description}</div>}
-                </div>
-              ))}
+    <Section id="work" number="02" label={experience.label}>
+      <ol className="roles">
+        {experience.items.map((role) => (
+          <li key={role.company} className="role">
+            <div className="role__head">
+              <h3 className="role__company">{role.company}</h3>
+              <p className="role__dates">{role.dates}</p>
             </div>
-          </Card>
-        </div>
-      )}
-
-      {/* Education Section */}
-      {data.education && (
-        <div className="education-section">
-          <Card className="education-card">
-            <h3>Education</h3>
-            <div className="education-item">
-              <div className="education-institution">{data.education.institution}</div>
-              <div className="education-degree">{data.education.degree}</div>
-              <div className="education-graduation">{data.education.graduation}</div>
-            </div>
-          </Card>
-        </div>
-      )}
-
-    </div>
+            <p className="role__title">{role.title}</p>
+            <p className="role__location">{role.location}</p>
+            <p className="role__context">{role.context}</p>
+            <Bullets items={role.bullets} />
+            {role.engagements?.map((e) => (
+              <div key={e.client} className="engagement">
+                <h4 className="engagement__client">{e.client}</h4>
+                <Bullets items={e.bullets} />
+              </div>
+            ))}
+          </li>
+        ))}
+      </ol>
+    </Section>
   );
 };
 

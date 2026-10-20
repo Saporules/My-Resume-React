@@ -40,7 +40,7 @@
     font-size: clamp(5.5rem, 26vw, 13rem);
     line-height: 0.8;
     letter-spacing: -0.025em;
-    margin-bottom: 10px;
+    padding-bottom: 0.14em; // room for the descender in "Lopez" above the rule
 
     @include respond-to(lg) {
       font-size: clamp(8rem, 15vw, 13rem);
