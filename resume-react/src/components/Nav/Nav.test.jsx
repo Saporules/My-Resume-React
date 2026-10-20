@@ -27,6 +27,12 @@ test('anchor links point at the page sections', () => {
 
 test('language button switches the nav to Spanish', () => {
   renderNav();
-  fireEvent.click(screen.getByRole('button', { name: en.nav.langToggleLabel }));
+  fireEvent.click(screen.getByRole('button', { name: new RegExp(en.nav.langToggleLabel) }));
   expect(screen.getByRole('link', { name: es.nav.work })).toBeInTheDocument();
+});
+
+test('language button accessible name includes its visible EN/ES text', () => {
+  renderNav();
+  const button = screen.getByRole('button', { name: new RegExp(en.nav.langToggleLabel) });
+  expect(button).toHaveAccessibleName(/EN.*ES/);
 });

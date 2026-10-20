@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# asaflopez.com
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal resume site. React 19 + Vite + SCSS, single page, English/Spanish.
 
-## Available Scripts
+## Develop
 
-In the project directory, you can run:
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm test         # Vitest
+```
 
-### `npm start`
+## Content
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+All copy lives in `src/content/`:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- `profile.js` — name, email, phone, LinkedIn, photo and CV paths (same in both languages)
+- `en.js` / `es.js` — every visible string; both files must keep the same shape (a test enforces it)
 
-### `npm test`
+## Contact form
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The form posts to [Web3Forms](https://web3forms.com). Create an access key for the
+inbox that should receive messages, then:
 
-### `npm run build`
+```bash
+cp .env.example .env
+# set VITE_WEB3FORMS_KEY=<your key>
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The key is baked into the build, so set it before `npm run build`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Release checklist
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. `public/Asaf_Lopez_CV.pdf` exists and is the current CV.
+2. `.env` has the real `VITE_WEB3FORMS_KEY`.
+3. `npm test` passes, then `npm run build`.
+4. `npm run preview`, send a test message, confirm it lands in the inbox (not spam) with reply-to set to the sender.
+5. Upload the **contents** of `dist/` to `public_html` on Banahosting (cPanel File Manager or FTP).

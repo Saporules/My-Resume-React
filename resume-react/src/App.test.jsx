@@ -28,6 +28,6 @@ test('switching language renders the Spanish summary', async () => {
   const { default: es } = await import('./content/es');
   const { fireEvent } = await import('@testing-library/react');
   renderApp();
-  fireEvent.click(screen.getByRole('button', { name: 'Ver en español' }));
+  fireEvent.click(screen.getByRole('button', { name: /Ver en español/ }));
   expect(screen.getByText(es.summary.text)).toBeInTheDocument();
 });

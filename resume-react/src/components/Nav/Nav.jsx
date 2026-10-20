@@ -26,12 +26,10 @@ const Nav = () => {
             type="button"
             className="nav__lang"
             onClick={toggleLang}
-            aria-label={nav.langToggleLabel}
           >
-            <span aria-hidden="true">
-              <b className={lang === 'en' ? 'is-on' : ''}>EN</b>
-              <b className={lang === 'es' ? 'is-on' : ''}>ES</b>
-            </span>
+            <b className={lang === 'en' ? 'is-on' : ''}>EN</b>
+            <b className={lang === 'es' ? 'is-on' : ''}>ES</b>
+            <span className="visually-hidden">{nav.langToggleLabel}</span>
           </button>
           <a className="btn btn--signal nav__cv" href={profile.cvUrl} download>
             {nav.downloadCv} <span aria-hidden="true">↓</span>

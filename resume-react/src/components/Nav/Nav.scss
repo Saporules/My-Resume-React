@@ -15,7 +15,11 @@
     padding: 0 $gutter;
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 12px;
+
+    @include respond-to(md) {
+      gap: 24px;
+    }
 
     @include respond-to(lg) {
       padding: 0 $gutter-lg;
@@ -57,9 +61,10 @@
     margin-left: auto;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
 
     @include respond-to(md) {
+      gap: 12px;
       margin-left: 8px;
     }
   }
@@ -90,5 +95,11 @@
 
   &__cv {
     white-space: nowrap;
+
+    // Must fit at 360px even before the web font loads (fallback is wider)
+    @include respond-to-max(sm) {
+      padding-left: 0.75em;
+      padding-right: 0.75em;
+    }
   }
 }
