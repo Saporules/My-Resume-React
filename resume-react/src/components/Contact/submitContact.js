@@ -27,7 +27,8 @@ export async function submitContact({ name, email, message, botcheck }, { access
         subject: `asaflopez.com — new message from ${name.trim()}`,
         from_name: 'asaflopez.com',
         replyto: email.trim(),
-        botcheck,
+        // Web3Forms treats any botcheck value as spam, so only a ticked honeypot is sent
+        ...(botcheck && { botcheck: true }),
       }),
     });
     if (!response.ok) return { ok: false };

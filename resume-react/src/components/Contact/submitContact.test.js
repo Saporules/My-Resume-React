@@ -18,9 +18,15 @@ describe('submitContact', () => {
       email: 'ana@example.com',
       message: 'Hi Asaf',
       replyto: 'ana@example.com',
-      botcheck: false,
     });
+    expect(body).not.toHaveProperty('botcheck');
     expect(body.subject).toContain('Ana Recruiter');
+  });
+
+  test('sends the honeypot only when a bot ticked it', async () => {
+    const fetchImpl = respond({ success: true });
+    await submitContact({ ...input, botcheck: true }, { accessKey: 'k', fetchImpl });
+    expect(JSON.parse(fetchImpl.mock.calls[0][1].body).botcheck).toBe(true);
   });
 
   test('reports failure when Web3Forms says success: false', async () => {
