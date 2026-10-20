@@ -1,5 +1,44 @@
 @use 'tokens' as *;
 
+@mixin light-palette {
+  --paper: #ffffff;
+  --ink: #0a0a0a;
+  --signal-text: #2b3bff;
+  --rule: #dcdcdc;
+  --muted: #545454;
+  --contact-muted: #b5b5b5;
+  --contact-line: #6b6b6b;
+  --contact-error: #ff8a8a;
+  color-scheme: light;
+}
+
+@mixin dark-palette {
+  --paper: #0a0a0a;
+  --ink: #f2f2f2;
+  --signal-text: #8c96ff; // #2b3bff is under 3:1 on near-black
+  --rule: #2e2e2e;
+  --muted: #a6a6a6;
+  --contact-muted: #545454;
+  --contact-line: #8a8a8a;
+  --contact-error: #b00020;
+  color-scheme: dark;
+}
+
+:root {
+  @include light-palette;
+}
+
+// Without JS (or before it runs) follow the system; the toggle sets data-theme
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    @include dark-palette;
+  }
+}
+
+:root[data-theme='dark'] {
+  @include dark-palette;
+}
+
 *,
 *::before,
 *::after {
@@ -38,7 +77,7 @@ a {
 }
 
 :focus-visible {
-  outline: 3px solid $signal;
+  outline: 3px solid $signal-text;
   outline-offset: 3px;
 }
 
@@ -80,6 +119,7 @@ a {
     &:hover {
       background: $signal;
       border-color: $signal;
+      color: $on-signal;
     }
   }
 
@@ -91,6 +131,7 @@ a {
     &:hover {
       background: $ink;
       border-color: $ink;
+      color: $paper;
     }
   }
 }
@@ -107,7 +148,7 @@ a {
   gap: 8px;
 
   li::marker {
-    color: $signal;
+    color: $signal-text;
   }
 }
 

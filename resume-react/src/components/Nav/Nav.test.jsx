@@ -36,3 +36,15 @@ test('language button accessible name includes its visible EN/ES text', () => {
   const button = screen.getByRole('button', { name: new RegExp(en.nav.langToggleLabel) });
   expect(button).toHaveAccessibleName(/EN.*ES/);
 });
+
+test('theme button switches to dark mode and reports its state', () => {
+  localStorage.setItem('theme', 'light');
+  renderNav();
+  const button = screen.getByRole('button', { name: en.nav.themeToggleLabel });
+  expect(button).toHaveAttribute('aria-pressed', 'false');
+
+  fireEvent.click(button);
+
+  expect(button).toHaveAttribute('aria-pressed', 'true');
+  expect(document.documentElement.dataset.theme).toBe('dark');
+});

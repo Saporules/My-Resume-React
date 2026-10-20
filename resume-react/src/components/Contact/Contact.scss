@@ -34,7 +34,7 @@
     justify-items: start;
 
     p {
-      color: #b5b5b5;
+      color: $contact-muted;
       font-size: $fs-sm;
     }
 
@@ -71,7 +71,7 @@
       color: $paper;
       background: transparent;
       border: 0;
-      border-bottom: 2px solid #6b6b6b;
+      border-bottom: 2px solid $contact-line;
       padding: 8px 0;
       border-radius: 0;
       resize: vertical;
@@ -89,12 +89,12 @@
 
     &.has-error input,
     &.has-error textarea {
-      border-bottom-color: #ff8a8a;
+      border-bottom-color: $contact-error;
     }
   }
 
   &__error {
-    color: #ff8a8a;
+    color: $contact-error;
     font-size: $fs-sm;
   }
 

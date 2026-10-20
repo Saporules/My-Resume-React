@@ -12,6 +12,7 @@ const en = {
     contact: 'Contact',
     downloadCv: 'Download CV',
     langToggleLabel: 'Ver en español',
+    themeToggleLabel: 'Dark mode',
   },
   hero: {
     titles: ['Senior Frontend Engineer', 'Software Architect', 'AI Engineer'],

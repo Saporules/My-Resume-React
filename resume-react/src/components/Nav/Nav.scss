@@ -33,6 +33,10 @@
     letter-spacing: -0.01em;
     text-decoration: none;
     white-space: nowrap;
+
+    @include respond-to-max(sm) {
+      font-size: $fs-base;
+    }
   }
 
   &__links {
@@ -61,7 +65,11 @@
     margin-left: auto;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
+
+    @include respond-to(sm) {
+      gap: 8px;
+    }
 
     @include respond-to(md) {
       gap: 12px;
@@ -90,6 +98,26 @@
       text-decoration-color: $signal;
       text-decoration-thickness: 2px;
       text-underline-offset: 4px;
+    }
+  }
+
+  &__theme {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: $ink;
+    cursor: pointer;
+
+    &:hover {
+      color: $signal-text;
+    }
+
+    @include respond-to-max(sm) {
+      width: 24px;
     }
   }
 
