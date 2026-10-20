@@ -1,37 +1,40 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/breakpoints' as *;
+
 .footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 2rem;
-  background-color: #000000;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid $rule;
+  font-size: $fs-sm;
 
-  .footer-content {
+  &__inner {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 20px $gutter 28px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 2rem;
-  }
+    flex-direction: column;
+    gap: 8px;
 
-  .footer-left,
-  .footer-right {
-    p {
-      margin: 0;
-      font-size: 0.95rem;
-      color: #353535;
-      font-weight: 400;
+    @include respond-to(md) {
+      flex-direction: row;
+      align-items: baseline;
+      gap: 32px;
+    }
 
-      &:hover {
-        color: #888888;
-        transition: color 0.3s ease;
-      }
+    @include respond-to(lg) {
+      padding-left: $gutter-lg;
+      padding-right: $gutter-lg;
     }
   }
 
-  .cross-symbol {
-    display: inline-block;
+  &__links {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__faith {
+    font-weight: 600;
+
+    @include respond-to(md) {
+      margin-left: auto;
+    }
   }
 }

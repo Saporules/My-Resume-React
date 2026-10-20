@@ -1,0 +1,94 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/breakpoints' as *;
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: $paper;
+  border-bottom: 1px solid $rule;
+
+  &__inner {
+    max-width: $max-width;
+    height: $nav-height;
+    margin: 0 auto;
+    padding: 0 $gutter;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @include respond-to(lg) {
+      padding: 0 $gutter-lg;
+    }
+  }
+
+  &__mark {
+    font-weight: 800;
+    font-variation-settings: 'wdth' 75;
+    font-size: $fs-md;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  &__links {
+    display: none;
+    gap: 22px;
+    margin-left: auto;
+    font-size: $fs-sm;
+    font-weight: 600;
+
+    a {
+      text-decoration: none;
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        border-color: $signal;
+      }
+    }
+
+    @include respond-to(md) {
+      display: flex;
+    }
+  }
+
+  &__actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    @include respond-to(md) {
+      margin-left: 8px;
+    }
+  }
+
+  &__lang {
+    font: inherit;
+    font-size: $fs-sm;
+    background: none;
+    border: 0;
+    padding: 6px 2px;
+    cursor: pointer;
+    color: $muted;
+
+    b {
+      font-weight: 600;
+      padding: 0 3px;
+    }
+
+    .is-on {
+      color: $ink;
+      font-weight: 800;
+      text-decoration: underline;
+      text-decoration-color: $signal;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+    }
+  }
+
+  &__cv {
+    white-space: nowrap;
+  }
+}

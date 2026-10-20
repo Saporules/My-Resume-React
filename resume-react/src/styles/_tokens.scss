@@ -1,0 +1,24 @@
+// Design tokens — "Swiss / Bold"
+@use 'sass:math';
+
+$paper: #ffffff;
+$ink: #0a0a0a;
+$signal: #2b3bff;
+$on-signal: #ffffff;
+$rule: #dcdcdc;
+$muted: #545454;
+
+$font: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+
+// Type scale (≈ 4:3)
+$fs-sm: 0.8125rem;   // 13
+$fs-base: 1.0625rem; // 17
+$fs-md: 1.375rem;    // 22
+$fs-lg: 1.875rem;    // 30
+$fs-xl: 2.5rem;      // 40
+
+$gutter: 16px;
+$gutter-lg: 40px;
+$max-width: 1280px;
+$rule-heavy: 3px solid $ink;
+$nav-height: 56px;
