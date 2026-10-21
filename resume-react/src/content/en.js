@@ -17,19 +17,19 @@ const en = {
   hero: {
     titles: ['Senior Frontend Engineer', 'Software Architect', 'AI Engineer'],
     location: 'San Luis Potosí, MX · Remote-ready US / EU / LATAM',
-    hook: 'I take on the migration nobody wants to own — and ship it with zero downtime.',
+    hook: 'I take on the migration nobody wants to own — and see it through to production.',
     ctaTalk: "Let's talk",
     ctaCv: 'Download CV',
     photoAlt: 'Portrait of Asaf Lopez',
     stats: [
       { value: '13+', label: 'years building for the web' },
-      { value: '0', label: 'downtime on live migrations' },
+      { value: '2', label: 'client platforms delivered from zero in 5 months' },
       { value: '20×', label: 'faster code reviews with AI' },
     ],
   },
   summary: {
     label: 'Summary',
-    text: 'Senior software engineer with 13+ years building and modernizing web applications for enterprise clients in banking, biotech and wealth management. Deep specialist in Angular, React and TypeScript, with a track record of zero-downtime migrations and legacy modernization on live enterprise platforms. Currently acting CTO at an AI consultancy, turning AI-generated prototypes into maintainable production software with real architecture, CI/CD and DevOps behind them. Known for taking on the hard, ambiguous problems — the migration nobody wants to own, the legacy code that can’t be touched — and for working effectively across distributed teams in English.',
+    text: 'Senior software engineer with 13+ years building and modernizing web applications for enterprise clients in banking, biotech and wealth management. Deep specialist in Angular, React and TypeScript, with a track record of migrating and modernizing legacy code on live enterprise platforms. Currently acting CTO at an AI consultancy, turning AI-generated prototypes into maintainable production software with real architecture, CI/CD and DevOps behind them. Known for taking on the hard, ambiguous problems — the migration nobody wants to own, the legacy code that can’t be touched — and for working effectively across distributed teams in English.',
   },
   experience: {
     label: 'Experience',

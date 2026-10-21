@@ -17,19 +17,19 @@ const es = {
   hero: {
     titles: ['Senior Frontend Engineer', 'Software Architect', 'AI Engineer'],
     location: 'San Luis Potosí, MX · Remoto EE. UU. / Europa / LATAM',
-    hook: 'Me encargo de la migración que nadie quiere tomar — y la entrego sin caídas.',
+    hook: 'Me encargo de la migración que nadie quiere tomar — y la llevo hasta producción.',
     ctaTalk: 'Hablemos',
     ctaCv: 'Descargar CV',
     photoAlt: 'Retrato de Asaf Lopez',
     stats: [
       { value: '13+', label: 'años construyendo para la web' },
-      { value: '0', label: 'caídas en migraciones en vivo' },
+      { value: '2', label: 'plataformas entregadas desde cero en 5 meses' },
       { value: '20×', label: 'revisiones de código más rápidas con IA' },
     ],
   },
   summary: {
     label: 'Resumen',
-    text: 'Ingeniero de software senior con más de 13 años construyendo y modernizando aplicaciones web para clientes empresariales de banca, biotecnología y gestión patrimonial. Especialista en Angular, React y TypeScript, con un historial de migraciones sin tiempo de inactividad y modernización de sistemas legacy en plataformas empresariales en producción. Actualmente CTO interino en una consultora de IA, convirtiendo prototipos generados con IA en software de producción mantenible, con arquitectura real, CI/CD y DevOps. Reconocido por asumir los problemas difíciles y ambiguos — la migración que nadie quiere tomar, el código legacy que no se puede tocar — y por trabajar eficazmente en inglés con equipos distribuidos.',
+    text: 'Ingeniero de software senior con más de 13 años construyendo y modernizando aplicaciones web para clientes empresariales de banca, biotecnología y gestión patrimonial. Especialista en Angular, React y TypeScript, con experiencia migrando y modernizando sistemas legacy en plataformas empresariales en producción. Actualmente CTO interino en una consultora de IA, convirtiendo prototipos generados con IA en software de producción mantenible, con arquitectura real, CI/CD y DevOps. Reconocido por asumir los problemas difíciles y ambiguos — la migración que nadie quiere tomar, el código legacy que no se puede tocar — y por trabajar eficazmente en inglés con equipos distribuidos.',
   },
   experience: {
     label: 'Experiencia',
