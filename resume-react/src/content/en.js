@@ -13,6 +13,8 @@ const en = {
     downloadCv: 'Download CV',
     langToggleLabel: 'Ver en español',
     themeToggleLabel: 'Dark mode',
+    sectionsLabel: 'Sections',
+    skipToContent: 'Skip to content',
   },
   hero: {
     titles: ['Senior Frontend Engineer', 'Software Architect', 'AI Engineer'],

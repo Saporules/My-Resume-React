@@ -1,0 +1,27 @@
+# Apache / LiteSpeed config for asaflopez.com (Banahosting). Ships in dist/ with the site.
+
+Options -Indexes
+
+# Always serve over HTTPS
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Never serve dotfiles (.env, .git, this file)
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  # The sha256 allows the one-line theme script in index.html; src/site/site.test.js
+  # fails if they drift. connect-src is where the contact form posts.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'sha256-0Fu+Oc4UwH5V14Qh1tpgjW3yuvGh4K3sUaNZ8EzdYOs='; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.web3forms.com; form-action 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+</IfModule>

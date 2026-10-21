@@ -7,12 +7,16 @@ import Leadership from './components/Leadership/Leadership';
 import Earlier from './components/Earlier/Earlier';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import { useContent } from './i18n/LanguageContext';
 
 function App() {
+  const { nav } = useContent();
+
   return (
     <>
+      <a className="skip-link" href="#top">{nav.skipToContent}</a>
       <Nav />
-      <main id="top">
+      <main id="top" tabIndex={-1}>
         <Hero />
         <Summary />
         <Experience />

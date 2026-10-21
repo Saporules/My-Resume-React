@@ -18,7 +18,7 @@ const Nav = () => {
     <header className="nav">
       <div className="nav__inner">
         <a className="nav__mark" href="#top">{profile.name}</a>
-        <nav className="nav__links" aria-label="Sections">
+        <nav className="nav__links" aria-label={nav.sectionsLabel}>
           {links.map(([href, label]) => (
             <a key={href} href={href}>{label}</a>
           ))}

@@ -31,3 +31,11 @@ test('switching language renders the Spanish summary', async () => {
   fireEvent.click(screen.getByRole('button', { name: /Ver en español/ }));
   expect(screen.getByText(es.summary.text)).toBeInTheDocument();
 });
+
+test('a skip link is the first focusable element and targets main', () => {
+  renderApp();
+  const first = document.querySelector('a[href], button');
+  expect(first).toHaveTextContent('Skip to content');
+  expect(first).toHaveAttribute('href', '#top');
+  expect(document.querySelector('main')).toHaveAttribute('tabindex', '-1');
+});

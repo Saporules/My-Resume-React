@@ -1,0 +1,16 @@
+# Asaf Lopez
+
+> Senior Frontend Engineer, Software Architect and AI Engineer with 13+ years building and modernizing web applications for enterprise clients in banking, biotech and wealth management. Angular, React, TypeScript. Based in San Luis Potosí, Mexico; remote-ready for US, EU and LATAM teams. Open to senior frontend, architecture and AI engineering roles, and to helping startups and projects.
+
+## Experience
+
+- SoberanIA — Software Architect / Acting CTO · AI Engineering (Mar 2026 – Present): AI solutions for private-sector enterprises in legal, accounting and healthcare.
+- The Web Factory — Full-Stack Developer & Server Operations · Escalation Engineer (Oct 2025 – Mar 2026)
+- Globant — Senior Frontend Developer (2017 – 2025): modernization programs for Fortune-scale US clients in finance, biotech and banking.
+
+## Contact
+
+- [Website](https://asaflopez.com/): full profile in English and Spanish, with a contact form
+- [CV (PDF)](https://asaflopez.com/Asaf_Lopez_CV.pdf): current resume
+- [LinkedIn](https://www.linkedin.com/in/asaf-lopez-govea): professional profile
+- [Email](mailto:asaf.eduardo@gmail.com): asaf.eduardo@gmail.com

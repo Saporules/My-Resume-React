@@ -20,16 +20,39 @@
       content="13+ years modernizing enterprise web platforms for banking, biotech and wealth management. Angular, React, TypeScript, AI engineering."
     />
     <meta property="og:image" content="https://asaflopez.com/profile-pic.jpg" />
+    <meta property="og:image:alt" content="Portrait of Asaf Lopez" />
+    <meta property="og:site_name" content="Asaf Lopez" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="es_MX" />
     <meta name="twitter:card" content="summary" />
 
-    <script>
-      // Apply the saved or system theme before first paint (same rule as src/theme/theme.js)
-      try {
-        var t = localStorage.getItem('theme');
-        if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        document.documentElement.dataset.theme = t;
-      } catch (e) {}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Asaf Lopez",
+        "url": "https://asaflopez.com/",
+        "image": "https://asaflopez.com/profile-pic.jpg",
+        "jobTitle": "Senior Frontend Engineer & Software Architect",
+        "email": "mailto:asaf.eduardo@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Luis Potosí",
+          "addressCountry": "MX"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Universidad Politécnica de San Luis Potosí"
+        },
+        "knowsAbout": ["Angular", "React", "TypeScript", "Frontend architecture", "Legacy modernization", "AI engineering"],
+        "knowsLanguage": ["es", "en"],
+        "sameAs": ["https://www.linkedin.com/in/asaf-lopez-govea"]
+      }
     </script>
+
+    <!-- Apply the saved or system theme before first paint (same rule as src/theme/theme.js).
+         One line on purpose: public/.htaccess allows it by hash, so edit both together. -->
+    <script>try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t}catch(e){}</script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

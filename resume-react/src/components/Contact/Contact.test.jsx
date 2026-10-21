@@ -67,3 +67,15 @@ test('has a hidden honeypot that keyboard users cannot reach', () => {
   expect(honeypot).toHaveAttribute('tabindex', '-1');
   expect(honeypot.closest('.visually-hidden')).not.toBeNull();
 });
+
+test('marks every field as required for assistive tech', () => {
+  for (const label of [en.contact.nameLabel, en.contact.emailLabel, en.contact.messageLabel]) {
+    expect(screen.getByLabelText(label)).toBeRequired();
+  }
+});
+
+test('moves focus to the first invalid field when sending fails validation', () => {
+  fireEvent.change(screen.getByLabelText(en.contact.nameLabel), { target: { value: 'Ana' } });
+  fireEvent.click(sendButton());
+  expect(screen.getByLabelText(en.contact.emailLabel)).toHaveFocus();
+});

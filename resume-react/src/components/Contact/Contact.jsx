@@ -27,7 +27,12 @@ const Contact = () => {
 
     const found = validateContact(values);
     setErrors(found);
-    if (Object.keys(found).length > 0) return;
+    const invalid = Object.keys(found);
+    if (invalid.length > 0) {
+      // Errors are not announced on their own; focusing the field reads its message
+      document.getElementById(`contact-${invalid[0]}`)?.focus();
+      return;
+    }
 
     inFlight.current = true;
     setStatus('sending');
@@ -48,6 +53,7 @@ const Contact = () => {
         name={name}
         value={values[name]}
         onChange={update(name)}
+        required
         aria-invalid={Boolean(errors[name])}
         aria-describedby={errors[name] ? `contact-${name}-error` : undefined}
         {...extra}

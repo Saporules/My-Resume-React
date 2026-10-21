@@ -48,3 +48,10 @@ test('theme button switches to dark mode and reports its state', () => {
   expect(button).toHaveAttribute('aria-pressed', 'true');
   expect(document.documentElement.dataset.theme).toBe('dark');
 });
+
+test('section navigation is labelled in the current language', () => {
+  renderNav();
+  expect(screen.getByRole('navigation', { name: 'Sections' })).toBeInTheDocument();
+  fireEvent.click(screen.getByRole('button', { name: new RegExp(en.nav.langToggleLabel) }));
+  expect(screen.getByRole('navigation', { name: 'Secciones' })).toBeInTheDocument();
+});
