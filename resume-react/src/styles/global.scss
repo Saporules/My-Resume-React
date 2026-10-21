@@ -1,0 +1,167 @@
+@use 'tokens' as *;
+
+@mixin light-palette {
+  --paper: #ffffff;
+  --ink: #0a0a0a;
+  --signal-text: #2b3bff;
+  --rule: #dcdcdc;
+  --muted: #545454;
+  --contact-muted: #b5b5b5;
+  --contact-line: #6b6b6b;
+  --contact-error: #ff8a8a;
+  color-scheme: light;
+}
+
+@mixin dark-palette {
+  --paper: #0a0a0a;
+  --ink: #f2f2f2;
+  --signal-text: #8c96ff; // #2b3bff is under 3:1 on near-black
+  --rule: #2e2e2e;
+  --muted: #a6a6a6;
+  --contact-muted: #545454;
+  --contact-line: #8a8a8a;
+  --contact-error: #b00020;
+  color-scheme: dark;
+}
+
+:root {
+  @include light-palette;
+}
+
+// Without JS (or before it runs) follow the system; the toggle sets data-theme
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    @include dark-palette;
+  }
+}
+
+:root[data-theme='dark'] {
+  @include dark-palette;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: $nav-height + 8px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: $paper;
+  color: $ink;
+  font-family: $font;
+  font-size: $fs-base;
+  line-height: 1.55;
+  font-variation-settings: 'wdth' 100;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, p, ul {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid $signal-text;
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+// Shared button look: square, solid or outlined ink
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.7em 1.15em;
+  border: 2px solid $ink;
+  font: inherit;
+  font-size: $fs-sm;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  color: $ink;
+  transition: background-color 0.15s, color 0.15s;
+
+  &:hover {
+    background: $ink;
+    color: $paper;
+  }
+
+  &--solid {
+    background: $ink;
+    color: $paper;
+
+    &:hover {
+      background: $signal;
+      border-color: $signal;
+      color: $on-signal;
+    }
+  }
+
+  &--signal {
+    background: $signal;
+    border-color: $signal;
+    color: $on-signal;
+
+    &:hover {
+      background: $ink;
+      border-color: $ink;
+      color: $paper;
+    }
+  }
+}
+
+.lead {
+  font-size: $fs-md;
+  line-height: 1.45;
+}
+
+.bullets {
+  margin-top: 14px;
+  padding-left: 1.1em;
+  display: grid;
+  gap: 8px;
+
+  li::marker {
+    color: $signal-text;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

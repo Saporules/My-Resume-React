@@ -1,0 +1,43 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/breakpoints' as *;
+
+.skills {
+  margin: 0;
+  display: grid;
+  gap: 18px;
+
+  &__group {
+    display: grid;
+    gap: 8px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid $rule;
+
+    @include respond-to(md) {
+      grid-template-columns: 11rem 1fr;
+      gap: 20px;
+    }
+
+    dt {
+      font-weight: 700;
+    }
+
+    dd {
+      margin: 0;
+    }
+  }
+
+  &__chips {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    li {
+      border: 1.5px solid $ink;
+      padding: 3px 9px;
+      font-size: $fs-sm;
+      line-height: 1.4;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/breakpoints' as *;
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: $paper;
+  border-bottom: 1px solid $rule;
+
+  &__inner {
+    max-width: $max-width;
+    height: $nav-height;
+    margin: 0 auto;
+    padding: 0 $gutter;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    @include respond-to(md) {
+      gap: 24px;
+    }
+
+    @include respond-to(lg) {
+      padding: 0 $gutter-lg;
+    }
+  }
+
+  &__mark {
+    font-weight: 800;
+    font-variation-settings: 'wdth' 75;
+    font-size: $fs-md;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    white-space: nowrap;
+
+    @include respond-to-max(sm) {
+      font-size: $fs-base;
+    }
+  }
+
+  &__links {
+    display: none;
+    gap: 22px;
+    margin-left: auto;
+    font-size: $fs-sm;
+    font-weight: 600;
+
+    a {
+      text-decoration: none;
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        border-color: $signal;
+      }
+    }
+
+    @include respond-to(md) {
+      display: flex;
+    }
+  }
+
+  &__actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    @include respond-to(sm) {
+      gap: 8px;
+    }
+
+    @include respond-to(md) {
+      gap: 12px;
+      margin-left: 8px;
+    }
+  }
+
+  &__lang {
+    font: inherit;
+    font-size: $fs-sm;
+    background: none;
+    border: 0;
+    padding: 6px 2px;
+    cursor: pointer;
+    color: $muted;
+
+    b {
+      font-weight: 600;
+      padding: 0 3px;
+    }
+
+    .is-on {
+      color: $ink;
+      font-weight: 800;
+      text-decoration: underline;
+      text-decoration-color: $signal;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+    }
+  }
+
+  &__theme {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: $ink;
+    cursor: pointer;
+
+    &:hover {
+      color: $signal-text;
+    }
+
+    @include respond-to-max(sm) {
+      width: 24px;
+    }
+  }
+
+  &__cv {
+    white-space: nowrap;
+
+    // Must fit at 360px even before the web font loads (fallback is wider)
+    @include respond-to-max(sm) {
+      padding-left: 0.75em;
+      padding-right: 0.75em;
+    }
+  }
+}

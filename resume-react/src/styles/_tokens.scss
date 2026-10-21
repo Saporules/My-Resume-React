@@ -1,0 +1,31 @@
+// Design tokens — "Swiss / Bold"
+@use 'sass:math';
+
+// Colors resolve at runtime so dark mode only swaps the custom properties
+// (defined in global.scss). The blue fills stay the same in both modes.
+$paper: var(--paper);
+$ink: var(--ink);
+$signal: #2b3bff;
+$on-signal: #ffffff;
+$signal-text: var(--signal-text); // blue used as text or thin marks on $paper
+$rule: var(--rule);
+$muted: var(--muted);
+// The contact block is $ink on $paper inverted, so its greys flip too
+$contact-muted: var(--contact-muted);
+$contact-line: var(--contact-line);
+$contact-error: var(--contact-error);
+
+$font: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+
+// Type scale (≈ 4:3)
+$fs-sm: 0.8125rem;   // 13
+$fs-base: 1.0625rem; // 17
+$fs-md: 1.375rem;    // 22
+$fs-lg: 1.875rem;    // 30
+$fs-xl: 2.5rem;      // 40
+
+$gutter: 16px;
+$gutter-lg: 40px;
+$max-width: 1280px;
+$rule-heavy: 3px solid $ink;
+$nav-height: 56px;

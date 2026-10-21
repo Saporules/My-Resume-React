@@ -1,239 +1,64 @@
-@import '../../breakpoints';
+@use '../../styles/tokens' as *;
 
-.experience-section {
-  margin-top: 4rem;
+.roles {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-  h2 {
-    font-size: 6rem;
-    margin: 0 0 1.5rem 0;
-    color: #00d4ff;
+.role {
+  padding: 28px 0 32px;
+  border-top: $rule-heavy;
+
+  &:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  &__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 4px 16px;
+  }
+
+  &__company {
+    font-size: $fs-xl;
+    font-weight: 800;
+    font-variation-settings: 'wdth' 70;
     line-height: 1;
-    padding: 2.5rem;
-
-    @include respond-to-max(sm) {
-      padding: 1.5rem;
-    }
-
-    @include respond-to-max(md) {
-      font-size: 3rem;
-    }
   }
 
-  .companies {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: 1fr;
-  }
-
-  .experience-card {
-    /* Default card styles will come from Card.scss; we only tweak inner layout here */
-    .company-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 1rem;
-      font-family: 'Md Mono', monospace;
-
-      @include respond-to-max(md) {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-      }
-
-      .company-name {
-        font-size: 2.5rem;
-        margin: 0;
-        color: black;
-        font-family: 'Russo One', sans-serif;
-      }
-
-      .company-meta {
-        font-size: 0.95rem;
-        color: rgba(0,0,0,0.6);
-      }
-    }
-    .role-title {
-        font-size: 1.5rem;
-        font-family: 'md mono', monospace;
-      }
-    .role {
-      padding: 2rem;
-
-      @include respond-to-max(sm) {
-        padding-left: 0;
-        padding-right: 0;
-      }
-
-      &:not(:last-child) {
-        border-bottom: 3px solid white;
-      }
-
-      .role-dates {
-        font-size: 0.95rem;
-        color: rgba(0,0,0,0.6);
-        margin: 0 0 0.25rem 0;
-        display: block;
-      }
-
-      .role-client {
-        font-size: 1.2rem;
-        color: rgba(0,0,0,0.75);
-        margin: 0.15rem 0 0.5rem 0;
-        display: block;
-        font-weight: bold;
-      }
-
-      .role-techline {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: flex-start;
-        background: #2b2b2b;
-        color: #ffffff;
-        padding: 0.6rem;
-        border-radius: 6px;
-        margin: 0 0 0.75rem 0;
-        font-size: 0.95rem;
-        width: 100%;
-      }
-
-      .tech-item {
-        display: block;
-        white-space: normal;
-        margin: 0;
-        font-size: 0.85rem;
-      }
-
-      .tech-item strong {
-        font-weight: 700;
-        margin-right: 0.35rem;
-      }
-
-      .role-details {
-        margin: 0.5rem 0 0 1rem;
-        color: rgba(0,0,0,0.8);
-      }
-    }
-  }
-
-  /* Company-specific branding overrides */
-  /* Globant: gradient #bfd732 to #4bfd97, text color #575c65 */
-  .experience-card.globant {
-    background: linear-gradient(90deg, #bfd732 0%, #4bfd97 100%);
-    color: #575c65;
-
-    &:before{
-        opacity:0.4;
-    }
-
-    .company-meta,
-    .role-dates,
-    .role-client,
-    .role-details {
-      color: rgba(87,92,101,0.85);
-    }
-  }
-
-  /* Early Career Card */
-  .early-career-section {
-    margin-top: 2rem;
-  }
-
-  .early-career-card {
-    background: linear-gradient(90deg, #ff005e 0%, #ff77a9 50%, #ff005e 100%);
-    color: white;
-
-    &:before{
-        opacity:0.2;
-    }
-
-    h3 {
-        font-family: 'Russo One', sans-serif;
-        font-size: 2rem;
-    }
-  }
-
-  .early-career-list {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-
-  .early-career-item {
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    color: white;
-    font-family: 'Md Mono', monospace;
-  }
-
-  .early-career-role {
-    font-size: 1rem;
+  &__dates {
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    font-size: $fs-sm;
+    font-variant-numeric: tabular-nums;
   }
 
-  .early-career-company {
-    font-family: 'Russo One', sans-serif;
-    font-size: 1.2rem;
+  &__title {
+    margin-top: 10px;
     font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 0.35rem;
-    opacity: 0.95;
   }
 
-  .early-career-duration {
-    font-size: 0.85rem;
-    margin-bottom: 0.8rem;
+  &__location {
+    font-size: $fs-sm;
+    color: $muted;
   }
 
-  .early-career-description {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    opacity: 0.9;
-    margin-top: 0.5rem;
+  &__context {
+    margin-top: 12px;
+    color: $muted;
   }
-  /* Education Card */
-  .education-section {
-    margin-top: 2rem;
-  }
+}
 
-  .education-card {
-    background: radial-gradient(circle, #00d4ff 0%, #009dbd 100%);
-    color: white;
+.engagement {
+  margin-top: 24px;
+  padding-left: 16px;
+  border-left: 3px solid $signal;
 
-    &:before{
-        opacity:0.18;
-    }
-
-    h3 {
-      font-family: 'Russo One', sans-serif;
-      font-size: 2rem;
-    }
-  }
-
-  .education-item {
-    padding: 1.5rem;
-    background: rgba(255,255,255,0.06);
-    border-radius: 8px;
-    color: white;
-    font-family: 'Md Mono', monospace;
-  }
-
-  .education-institution {
-    font-size: 1.1rem;
+  &__client {
+    font-size: $fs-base;
     font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-
-  .education-degree {
-    font-size: 0.95rem;
-    margin-bottom: 0.35rem;
-    opacity: 0.95;
-  }
-
-  .education-graduation {
-    font-size: 0.85rem;
-    opacity: 0.85;
   }
 }
